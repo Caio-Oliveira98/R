@@ -1,40 +1,46 @@
-#Tabela (Data Frame)
-#primeiro de um nome para a tabela, primeiramente coloque o ''nome'' da coluna e insira os vetores
-#depois coloque o "nome" da outra coluna e etc
-tabela1 <- data.frame(Nome = c("Andre", "Gustavo"),
-                      Idade = c(25, 34))
+#Estruturas de Condição:
 
-#localizando um elemento de tabela utilizando "$"
-#tabela1$
-#criando uma nova coluna
-tabela1$Salario <- c(1500,1000)
-#criando uma tabela nova a partir da tabela anterior, com uma coluna nova
-tabela2 <- cbind(tabela1, data.frame(Casado = c("sim", "não")))
-#criando uma nova tabela, acrescentando uma nova linha, é necessário colocar todas as informaçoes da tabela para adicionar as linhas
-tabela3 <- rbind(tabela2, data.frame(Nome = "Paola",
-                                     Idade = 23,
-                                     Salario = 3000,
-                                     Casado = "Sim"))
+#if e else
+a <-5
+b <-7
+c <-8
 
-#As listas são estruturas que conseguimos armazena vários tipos de objetos (matriz, tabela, vetor)
-familia <- list(pai =" Armando", mae = "Sandra", numfilhos = 1, idade = 26)
+if(a != b & b != c & c != a){cat("É um triângulo escaleno")}else{cat("O triângulo não é escaleno")}
 
-#funções são usadas para criar fórmulas
-area <- function(b,h){return((b*h)/2)}
-area(2,3) #ou area(b=2, h=3)
 
-#criando funções
-area1 <- function(bM,bm,h){return(((bM+bm)*3)/2)}
-area1(bM=15, bm=5, h=3)
+#ifelse
 
-#classificando e localizando os objetos:
-class(familia)
-class(area)
-#para saber todos os objetos criados até o ponto do código
-ls()
+x <- -25
 
-#para remover algum objeto específico (rm ou remove)
-rm(familia)
+ifelse(x>=0, sqrt(x), "Não é possível calcular a raíz quadrada")
+      #teste lógico, primeira informação é a do if , a segunda é do else
 
-#como pedir suporte ao R
-help(data.frame)
+#estrutura de repetição
+
+#retornando o cubo dos números de 1 até 5
+#função FOR
+for(i in 1:5){print(i^3)}
+
+
+corrida <- data.frame(Ritmo=c(5.55, 4.59, 5.21, 6.05),
+                      Posicao=c(9,2,6,4),
+                      row.names=c("C1", "C2", "C3", "C4"))
+
+for(i in corrida[,2]){print(i^2)}
+
+#while
+x <- 1
+while(x<=10){print(x); x <- x+1}
+
+#estrutura repeat
+x <- rep(3, 10)
+        #argumento,numero de repetições(no caso 10)
+
+z <- c(6, 12, 16)
+rep(z,2)
+#repitindo o vetor 2x
+
+w <- c(5, 4, 3)
+rep(w, each=2)
+#repitindo formato aa(55) bb(44) cc(33)
+
